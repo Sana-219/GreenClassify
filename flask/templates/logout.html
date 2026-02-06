@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - GreenClassify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>Vegetable Classification</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Result Section -->
+    <section class="result-section">
+        <div class="result-container">
+            <!-- Upload Area for New Prediction -->
+            <div class="upload-area">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <form action="/result" method="POST" enctype="multipart/form-data">
+                    <div class="file-input-wrapper">
+                        <input type="file" name="image" id="image" accept="image/*" required>
+                        <label for="image" class="file-label">
+                            <span class="choose-btn">Choose File</span>
+                            <span class="file-name">No file chosen</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+
+            <!-- Result Display -->
+            <div class="result-display success">
+                <h3>Vegetable is <span class="prediction-result">{{ pred }}</span></h3>
+            </div>
+
+            <!-- Decorative Image -->
+            <div class="decorative-image">
+                <img src="{{ url_for('static', filename='img/vegetables-cartoon.png') }}" alt="Vegetables Cartoon">
+                <p class="classify-text">Classify your vegetable with GreenClassify.com</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="/prediction.html" class="btn btn-primary">Classify Another</a>
+                <a href="/index.html" class="btn btn-secondary">Go Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer prediction-footer">
+        <div class="footer-content">
+            <span>© 2026 GreenClassify</span>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenClassify - Vegetable Image Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>GreenClassify.com</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/prediction.html">Prediction</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='img/vegetables-banner.jpg') }}" alt="Vegetables Banner">
+                    <div class="carousel-caption">
+                        <h2>Vegetable Image Classification</h2>
+                        <p>Identify vegetables using AI technology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>ABOUT US</h2>
+            <p>
+                GreenClassify is a specialized platform solely focused on the task of vegetable image classification. 
+                We utilize advanced machine learning algorithms and maintain a vast database to provide precise and 
+                dependable classification results for a wide variety of vegetables. Our aim is to simplify the process of 
+                identifying vegetables by leveraging the power of image recognition technology. Whether you are a 
+                chef, a nutritionist, or a vegetable enthusiast, GreenClassify is your go-to resource for accurately 
+                categorizing vegetables and expanding your understanding of their diverse characteristics. Join us on 
+                this platform to explore the world of vegetable classification and unlock a deeper appreciation for the 
+                rich tapestry of edible plants.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2>KEY FEATURES</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Deep Learning</h3>
+                    <p>Advanced CNN model trained on 15,000+ vegetable images for accurate classification</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Prediction</h3>
+                    <p>Get instant results with our optimized image processing pipeline</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>15 Vegetables</h3>
+                    <p>Supports classification of 15 different vegetable categories</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>CONTACT US</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>tejaskarekar17@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 1234567890</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Sangli, Maharashtra, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 GreenClassify. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
