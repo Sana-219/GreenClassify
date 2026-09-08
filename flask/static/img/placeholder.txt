@@ -1,0 +1,7 @@
+<!-- Placeholder for vegetables banner image -->
+<!-- Replace this with an actual vegetable banner image -->
+<!-- Suggested size: 1200x400 pixels -->
+<!-- You can download free vegetable images from:
+     - https://unsplash.com/s/photos/vegetables
+     - https://www.pexels.com/search/vegetables/
+-->
