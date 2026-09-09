@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: greenclassify-model
+    runtime: python
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: gunicorn --chdir flask app:app
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: LOAD_LOCAL_MODEL
+        value: "1"

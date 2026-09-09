@@ -3,7 +3,13 @@ import sys
 import os
 
 # Add flask directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'flask'))
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+flask_dir = os.path.join(project_root, 'flask')
+sys.path.insert(0, flask_dir)
+if project_root in sys.path:
+	sys.path.remove(project_root)
+if '' in sys.path:
+	sys.path.remove('')
 
 from app import app
 

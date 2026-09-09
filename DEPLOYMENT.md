@@ -1,9 +1,12 @@
-# GreenClassify - Vercel Deployment Guide
+# GreenClassify - Vercel and Render Deployment Guide
+
+The web UI runs on Vercel. TensorFlow and the model run on Render as a separate
+Flask service. The Vercel app calls Render through `MODEL_API_URL`.
 
 ## Prerequisites
 - A Vercel account (free at https://vercel.com)
 - Git installed on your machine
-- The model file `flask/vegetable_classification.h5` in your repository
+- The real model artifact, not only its Git LFS pointer
 
 ## Deployment Steps
 
@@ -31,7 +34,21 @@ git branch -M main
 git push -u origin main
 ```
 
-### 4. Deploy to Vercel
+### 4. Deploy the model service to Render
+
+1. Ensure Git LFS is installed and the model is present before pushing:
+  ```bash
+  git lfs install
+  git lfs pull
+  ```
+2. In Render, select **New > Blueprint**, choose the repository, and apply the
+  included `render.yaml`.
+3. Copy the resulting public service URL, such as
+  `https://greenclassify-model.onrender.com`.
+
+The Render service exposes `GET /health` and `POST /predict`.
+
+### 5. Deploy the UI to Vercel
 
 #### Option A: Using Vercel CLI
 ```bash
@@ -51,11 +68,11 @@ vercel
 5. Vercel will auto-detect the Flask framework
 6. Click "Deploy"
 
-### 5. Configure Environment Variables (if needed)
+### 6. Configure the Vercel Environment Variable
 In Vercel Dashboard:
-1. Go to Settings → Environment Variables
-2. Add any required variables (e.g., API keys)
-3. Redeploy
+1. Go to Settings > Environment Variables.
+2. Add `MODEL_API_URL` with the Render service URL.
+3. Redeploy.
 
 ## Important Notes
 
