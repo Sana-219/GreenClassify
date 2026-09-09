@@ -29,6 +29,7 @@ build/
 .DS_Store
 
 # Data and models (optional - remove if you want these included)
+flask/vegetable_classification.h5
 # Vegetable Images/
 
 # Notebooks
