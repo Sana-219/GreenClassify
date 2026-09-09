@@ -64,7 +64,7 @@ def predict():
 
     with tempfile.NamedTemporaryFile(suffix=os.path.splitext(image.filename or "image.jpg")[1]) as uploaded:
         image.save(uploaded.name)
-        img = load_img(uploaded.name, target_size=(299, 299))
+        img = load_img(uploaded.name, target_size=(224, 224))
         img_input = np.expand_dims(img_to_array(img), axis=0)
         pred = int(np.argmax(model.predict(img_input, verbose=0)))
 
